@@ -8,6 +8,19 @@ const Actions = {
       text,
     });
   },
+  deleteTodo(id) {
+    TodoDispatcher.dispatch({
+      type: TodoActionTypes.DELETE_TODO,
+      id,
+    });
+  },
+  toggleTodo(id) {
+    console.log('hahahah');
+    TodoDispatcher.dispatch({
+      type: TodoActionTypes.TOGGLE_TODO,
+      id,
+    })
+  }
 };
 
 export default Actions;
