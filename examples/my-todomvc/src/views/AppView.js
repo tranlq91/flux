@@ -63,6 +63,7 @@ function Footer(props) {
         </strong>
         {phrase}
       </span>
+      <button className="" onClick={props.onDeleteCompletedTodo}>Delete all Completed tasks</button>
     </footer>
   );
 }
