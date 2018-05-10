@@ -21,7 +21,7 @@ function Main(props) {
   if (props.todos.size === 0) {
     return null;
   }
-  console.log('propsman', props);
+  console.log('propsman', ...props.todos.values());
   return (
     <section id="main">
       <ul id="todo-list">
@@ -63,7 +63,8 @@ function Footer(props) {
         </strong>
         {phrase}
       </span>
-      <button className="" onClick={props.onDeleteCompletedTodo}>Delete all Completed tasks</button>
+      <button className="destroy" onClick={props.onDeleteCompletedTodo}>Delete all Completed tasks</button>
+      <button className="markall" onClick={props.onMarkAllTodo}>Mark all tasks</button>
     </footer>
   );
 }

@@ -24,6 +24,11 @@ const Actions = {
       type: TodoActionTypes.TOGGLE_TODO,
       id,
     })
+  },
+  markallTodo() {
+    TodoDispatcher.dispatch({
+      type: TodoActionTypes.MARK_ALL_TODO
+    })
   }
 };
 

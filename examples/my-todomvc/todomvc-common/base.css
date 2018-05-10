@@ -539,6 +539,14 @@ hr {
 	transition-duration: 500ms;
 }
 
+
+.destroy {
+	background-color: red;
+}
+.markall {
+	background-color: greenyellow;
+}
+
 @media (min-width: 899px) {
 	.learn-bar {
 		width: auto;

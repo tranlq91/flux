@@ -14,7 +14,8 @@ function getState() {
     todos: TodoStore.getState(),
     onToggleTodo : TodoActions.toggleTodo,
     onDeleteTodo : TodoActions.deleteTodo,
-    onDeleteCompletedTodo : TodoActions.deleteCompleteTodo
+    onDeleteCompletedTodo : TodoActions.deleteCompleteTodo,
+    onMarkAllTodo: TodoActions.markallTodo
   };
 }
 

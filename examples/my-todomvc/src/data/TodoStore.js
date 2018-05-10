@@ -28,11 +28,9 @@ class TodoStore extends ReduceStore {
           complete: false
         }));
       case TodoActionTypes.DELETE_TODO:
-        console.log('action', action);
         return state.delete(action.id);
 
       case TodoActionTypes.TOGGLE_TODO:
-        console.log('actionid', action.id);
         return state.update(
           action.id,
           todo => todo.set('complete', !todo.complete),
@@ -41,15 +39,17 @@ class TodoStore extends ReduceStore {
           state.map((todo, id) => {
             if(todo.complete == true){
               state = state.delete(id);
-              console.log('id', id);
-              console.log('w', state);
-            }
-              
+            }           
         });
-    
         return state;
      
-      
+      case TodoActionTypes.MARK_ALL_TODO:
+        console.log('mark alled');
+        state.map((todo,id) => {
+          state = state.update(id,
+          todo => todo.set('complete', !todo.complete))
+        });
+        return state;
       default:
         return state;
     }

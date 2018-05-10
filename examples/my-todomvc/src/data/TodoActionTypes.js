@@ -2,7 +2,8 @@ const ActionTypes = {
     ADD_TODO: 'ADD_TODO',
     DELETE_TODO: 'DELETE_TODO',
     DELETE_COMPLETE_TODO: 'DELETE_COMPLETE_TODO',
-    TOGGLE_TODO: 'TOGGLE_TODO'
+    TOGGLE_TODO: 'TOGGLE_TODO',
+    MARK_ALL_TODO: 'MARK_ALL_TODO'
 };
 
 export default ActionTypes;
