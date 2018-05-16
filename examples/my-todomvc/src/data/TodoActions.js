@@ -29,6 +29,16 @@ const Actions = {
     TodoDispatcher.dispatch({
       type: TodoActionTypes.MARK_ALL_TODO
     })
+  },
+  addDraftTodo(text) {
+    setTimeout(function(){
+        TodoDispatcher.dispatch({
+            type: TodoActionTypes.ADD_DRAFT_TODO,
+            text
+          })
+    },1)
+
+
   }
 };
 

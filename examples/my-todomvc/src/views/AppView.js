@@ -65,6 +65,7 @@ function Footer(props) {
       </span>
       <button className="destroy" onClick={props.onDeleteCompletedTodo}>Delete all Completed tasks</button>
       <button className="markall" onClick={props.onMarkAllTodo}>Mark all tasks</button>
+      <button className="" onClick={props.onAddDraftTodo("examples")}>Add draft todo</button>
     </footer>
   );
 }

@@ -18,7 +18,7 @@ class TodoStore extends ReduceStore {
     switch (action.type) {
       case TodoActionTypes.ADD_TODO:
         // Do nothing for now, we will add logic here soon!
-        
+
         if(!action.text)
           return state;
         const id = Counter.increment();
@@ -39,12 +39,11 @@ class TodoStore extends ReduceStore {
           state.map((todo, id) => {
             if(todo.complete == true){
               state = state.delete(id);
-            }           
+            }
         });
         return state;
-     
+
       case TodoActionTypes.MARK_ALL_TODO:
-        console.log('mark alled');
         state.map((todo,id) => {
           state = state.update(id,
           todo => todo.set('complete', !todo.complete))
