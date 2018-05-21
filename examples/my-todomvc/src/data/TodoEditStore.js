@@ -5,14 +5,20 @@ class TodoEditStore extends ReduceStore {
     constructor() {
       super(TodoDispatcher);
     }
-  
+
     getInitialState() {
       return Immutable.OrderedMap();
     }
     reduce(state, action) {
         switch (action.type) {
-          case 'increment':
+          case TodoActionTypes.START_EDITING_TODO:
+            return action.id;
+
+          case TodoActionTypes.STOP_EDITING_TODO:
+            return '';
+
+          default:
             return state;
         }
-    }
-}  
+      }
+}

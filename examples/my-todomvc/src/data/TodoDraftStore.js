@@ -9,18 +9,20 @@ class TodoDraftStore extends ReduceStore {
     }
 
     getInitialState() {
-      return Immutable.OrderedMap();
+      return '';
     }
     reduce(state, action) {
         switch (action.type) {
-          case TodoActionTypes.ADD_DRAFT_TODO:
-            console.log('insert draft');
-            return state;
+          case TodoActionTypes.ADD_TODO:
+            return '';
+
+          case TodoActionTypes.UPDATE_DRAFT:
+            return action.text;
 
           default:
             return state;
         }
-    }
+      }
 }
 
 export default new TodoDraftStore();

@@ -3,23 +3,30 @@ import {Container} from 'flux/utils';
 import TodoStore from '../data/TodoStore';
 import TodoActions from '../data/TodoActions';
 import TodoDraftStore from '../data/TodoDraftStore';
+import TodoEditStore from '../data/TodoEditStore'
 
 function getStores() {
   return [
     TodoStore,
-    TodoDraftStore
+    TodoDraftStore,
+    TodoEditStore
   ];
 }
 
 function getState() {
   return {
+    draft: TodoDraftStore.getState(),
+    editing: TodoEditStore.getState(),
     todos: TodoStore.getState(),
-    drafttodos: TodoDraftStore.getState(),
-    onToggleTodo : TodoActions.toggleTodo,
-    onDeleteTodo : TodoActions.deleteTodo,
-    onDeleteCompletedTodo : TodoActions.deleteCompleteTodo,
-    onMarkAllTodo: TodoActions.markallTodo,
-    onAddDraftTodo: TodoActions.addDraftTodo
+    onAdd: TodoActions.addTodo,
+    onDeleteCompletedTodos: TodoActions.deleteCompletedTodos,
+    onDeleteTodo: TodoActions.deleteTodo,
+    onEditTodo: TodoActions.editTodo,
+    onStartEditingTodo: TodoActions.startEditingTodo,
+    onStopEditingTodo: TodoActions.stopEditingTodo,
+    onToggleAllTodos: TodoActions.toggleAllTodos,
+    onToggleTodo: TodoActions.toggleTodo,
+    onUpdateDraft: TodoActions.updateDraft
   };
 }
 
