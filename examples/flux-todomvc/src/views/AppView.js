@@ -56,6 +56,7 @@ function Main(props) {
           <TodoItem
             key={todo.id}
             editing={props.editing}
+            tran="deptrai"
             todo={todo}
             onDeleteTodo={props.onDeleteTodo}
             onEditTodo={props.onEditTodo}
@@ -125,7 +126,9 @@ function NewTodo(props) {
 }
 
 function TodoItem(props) {
-  const {editing, todo} = props;
+
+  const {editing, todo, tran} = props;
+  console.log('todo in item', tran);
   const isEditing = editing === todo.id;
   const onDeleteTodo = () => props.onDeleteTodo(todo.id);
   const onStartEditingTodo = () => props.onStartEditingTodo(todo.id);

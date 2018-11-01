@@ -25,6 +25,10 @@ class TodoStore extends ReduceStore {
     return Immutable.OrderedMap();
   }
 
+  checkState() {
+      
+  }
+
   reduce(state, action) {
     switch (action.type) {
       case TodoActionTypes.ADD_TODO:
